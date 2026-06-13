@@ -30,9 +30,9 @@ This is a production-grade backend API that processes financial transactions asy
 ## System Architecture
 
 ```mermaid
-graph TD
+flowchart TD
     Client[Client / Swagger UI] -->|POST /jobs/upload| API[FastAPI Server]
-    API -->|1. Write CSV| Vol[(Shared Volume /app/csv_uploads)]
+    API -->|1. Write CSV| Vol[(Shared Volume)]
     API -->|2. Create Job| DB[(PostgreSQL)]
     API -->|3. Enqueue Task| Redis[(Redis Broker)]
     
@@ -40,18 +40,17 @@ graph TD
     Worker -->|5. Read CSV| Vol
     
     subgraph Celery Processing Pipeline
-        direction TB
         W1[1. Data Cleaning] --> W2[2. Anomaly Detection]
         W2 --> W3[3. LLM Categorization]
-        W3 --> W4[4. LLM Narrative Generation]
+        W3 --> W4[4. LLM Narrative]
     end
     
     Worker -->|Execute Pipeline| W1
     W3 -.->|API Call| LLM((Google Gemini API))
     W4 -.->|API Call| LLM
     
-    W4 -->|6. Save Results & Update Status| DB
-    Client -->|GET /jobs/{id}/results| API
+    W4 -->|6. Save Results| DB
+    Client -->|GET /jobs/id/results| API
     API -->|Read Results| DB
 ```
 
