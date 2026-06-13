@@ -1,0 +1,17 @@
+txn_id,date,merchant,amount,currency,status,category,account_id,notes
+TXN001,2024-01-15,Swiggy,450.00,INR,SUCCESS,Uncategorised,ACC001,Lunch order
+TXN002,2024-01-15,Amazon,2999.00,INR,SUCCESS,Uncategorised,ACC001,Book purchase
+TXN003,2024-01-16,Uber,320.50,INR,SUCCESS,Uncategorised,ACC001,Office commute
+TXN004,2024-01-16,Zomato,850.00,INR,SUCCESS,Uncategorised,ACC001,Dinner delivery
+TXN005,2024-01-17,Netflix,649.00,INR,SUCCESS,Uncategorised,ACC001,Monthly subscription
+TXN006,2024-01-17,HDFC ATM,5000.00,INR,SUCCESS,Uncategorised,ACC001,Cash withdrawal
+TXN007,2024-01-18,Starbucks,550.00,INR,SUCCESS,Uncategorised,ACC002,Coffee
+TXN008,2024-01-18,Flipkart,1299.00,INR,SUCCESS,Uncategorised,ACC002,Electronics
+TXN009,2024-01-19,IRCTC,2400.00,INR,SUCCESS,Uncategorised,ACC001,Train ticket Mumbai
+TXN010,2024-01-19,Swiggy,380.00,INR,SUCCESS,Uncategorised,ACC001,Breakfast order
+TXN011,2024-01-20,BookMyShow,600.00,INR,SUCCESS,Uncategorised,ACC002,Movie tickets
+TXN012,2024-01-20,Amazon,85000.00,INR,SUCCESS,Uncategorised,ACC001,Laptop purchase (outlier)
+TXN013,2024-01-21,Jio Recharge,299.00,INR,SUCCESS,Uncategorised,ACC001,Mobile recharge
+TXN014,2024-01-21,Uber,280.00,USD,SUCCESS,Uncategorised,ACC001,Currency mismatch anomaly
+TXN015,2024-01-22,Swiggy,510.00,INR,SUCCESS,Uncategorised,ACC002,Lunch
+TXN001,2024-01-15,Swiggy,450.00,INR,SUCCESS,Uncategorised,ACC001,Duplicate row
